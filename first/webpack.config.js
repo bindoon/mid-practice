@@ -6,8 +6,6 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const SimpleProgressPlugin = require('webpack-simple-progress-plugin');
 const os = require('os');
 const HappyPack = require('happypack');
-// eslint-disable-next-line
- const colors = require('colors');
 
 const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 const { DEV, LIVELOAD, SINGLE_PAGE } = process.env;
@@ -22,15 +20,6 @@ try {
   const pkg = require('./package.json');
   if (pkg && pkg.buildConfig && pkg.buildConfig.theme) {
     theme = pkg.buildConfig.theme;
-  } else {
-    const fieConfig = require('./fie.config.js');
-    if (fieConfig && fieConfig.toolkitConfig && fieConfig.toolkitConfig.theme) {
-      theme = fieConfig.toolkitConfig.theme;
-      console.warn(`fie中的主题包配置已迁移, 请在 package.json 中配置
-      buildConfig:{
-        theme: '@alife/theme-主题包名'
-      }`);
-    }
   }
 } catch (e) {
   console.error(e);
@@ -85,7 +74,7 @@ const config = {
   context: cwd,
   entry,
   output: {
-    path: path.resolve(process.env.BUILD_DEST || 'build'),
+    path: path.resolve('build'),
     publicPath: 'build',
     filename: '[name].js',
     chunkFilename: '[name].js',
@@ -126,8 +115,7 @@ const config = {
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM',
-    moment: 'moment',
-    '@alifd/next': 'Next'
+    moment: 'moment'
   },
 
   plugins: [
@@ -201,7 +189,6 @@ if (!DEV) {
       'Access-Control-Allow-Credentials': 'true',
     },
     stats: {
-      colors: true,
       chunks: false,
       children: false,
       modules: false,

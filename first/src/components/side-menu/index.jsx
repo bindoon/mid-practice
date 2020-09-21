@@ -11,6 +11,7 @@ const { Item, SubNav } = Nav;
 
 const links = {
   index: '/demos/index.html',
+  simple: '/demos/simple.html',
   help: '/demos/help.html',
 };
 
@@ -61,6 +62,12 @@ class SideMenu extends React.Component {
             className="left-nav-item"
             icon="atm"
           ><a href={links.index}>首页</a>
+          </Item>
+          <Item
+            key="simple"
+            className="left-nav-item"
+            icon="atm"
+          ><a href={links.simple}>simple</a>
           </Item>
           <Item
             key="redux"
