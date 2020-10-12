@@ -252,8 +252,9 @@ class List extends React.Component {
           }
         </FormItem>
         {actionType !== 'detail' && <Row style={{ marginTop: 24 }}>
-          <Col offset="15">
+          <Col offset="12" style={{ display: 'flex', justifyContent: 'space-around' }}>
             <Form.Submit type="primary" onClick={this.handleDrawerSubmit}>更新</Form.Submit>
+            <Button onClick={() => { this.setState({ drawerVisible: false }); }}>取消</Button>
           </Col>
         </Row>}
       </Form>
@@ -270,8 +271,12 @@ class List extends React.Component {
       <React.Fragment>
         <div className={'myapp-container'}>
           <div className={'header-container'}>
-            <Button onClick={() => { this.setState({ newVisible: true }); }}>新增一条(弹窗)</Button>
-            <Button onClick={() => { window.location.href = '/demos/new.html'; }}>新增一条(跳转)</Button>
+            <div>
+              <Button onClick={() => { this.setState({ newVisible: true }); }} style={{ marginRight: 10 }}>
+                新增一条(弹窗)
+              </Button>
+              <Button onClick={() => { window.location.href = '/demos/new.html'; }}>新增一条(跳转)</Button>
+            </div>
             <Input
               innerAfter={<Icon type="search" size="xs" onClick={this.handleSearch} style={{ margin: 4 }} />}
               placeholder="search"
@@ -290,8 +295,10 @@ class List extends React.Component {
             <Table.Column title="联系方式" dataIndex="phone" />
             <Table.Column cell={this.renderOper} width="20%" />
           </Table>
-          <div style={{ marginBottom: 10 }}>{`共  ${total}  条`}</div>
-          <Pagination current={current} onChange={this.handlePageChange} pageSize={pageSize} total={total} />
+          <div className={'footer-container'}>
+            <div style={{ marginRight: 10 }}>{`共  ${total}  条`}</div>
+            <Pagination current={current} onChange={this.handlePageChange} pageSize={pageSize} total={total} />
+          </div>
         </div>
         { drawerVisible && <Drawer
           title="学员信息"
