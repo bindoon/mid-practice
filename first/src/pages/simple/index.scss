@@ -11,3 +11,19 @@
   }
 
 }
+.myapp-container{
+  padding: 20px;
+  .header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .table-dom{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    .btn-group{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

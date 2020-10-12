@@ -3,11 +3,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Layout from 'components/layout/index';
+import List from './list';
 import './index.scss';
+
 
 ReactDOM.render(
   <Layout>
-    simple page
+    <List />
   </Layout>,
   document.getElementById('container'),
 );
