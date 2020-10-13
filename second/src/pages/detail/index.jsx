@@ -86,7 +86,7 @@ const DEFAULT_DATA = {
 };
 
 
-function Detail() {
+const Detail = () => {
   const [loading, setLoading] = useState(false);
   const [dataSource, setDataSource] = useState(null);
   const renderTab = () => (
@@ -308,6 +308,6 @@ function Detail() {
       }
     </Loading>
   </React.Fragment>);
-}
+};
 
 ReactDOM.render(<Detail />, document.getElementById('container'));
