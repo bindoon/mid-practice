@@ -20,14 +20,13 @@
   "dependencies": {
     "@alifd/next": "^1.20.28",
     "@alifd/theme-2": "^0.2.2",
-    "babel-polyfill": "^6.8.0",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-router": "^3.2.0"
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "babel-polyfill": "^6.8.0",
     "@alifd/next-theme-loader": "^1.1.2",
     "prettier": "^1.14.2",
     "husky": "^1.1.3",
