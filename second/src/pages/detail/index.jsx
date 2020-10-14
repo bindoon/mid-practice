@@ -16,75 +16,10 @@ import {
   Coordinate,
 } from 'bizcharts';
 import Wouldcloud from './wordcloud';
+import Tools from '../../utils';
+import request from '../../api/request';
+import ajax from '../../api/ajax';
 import './index.scss';
-
-const DEFAULT_DATA = {
-  logs: [
-    ['主管审批', '梅长苏'],
-    ['HRG', 'Tony'],
-    ['C&B审核人', 'CC'],
-    ['业务线审批', '玛丽'],
-    ['HR线审批', '宋江'],
-  ].map((item, idx) => ({
-    opStatus: item[0],
-    operator: item[1],
-    opResult: '同意',
-    opTime: `2019-11-11 0${idx}:3${idx}`,
-  })),
-  person: {
-    avatar: '//aliwork.alicdn.com/tfscom/T1fxt7FtJlXXXXXXXX_40x40',
-    surname: '郭',
-    name: '嘻嘻',
-    phone: '13812345678',
-    email: 'chinaNo1@aliwork-inc.com',
-    region: '中国/浙江',
-    address: '杭州',
-    workTime: '大三',
-    education: '五道口职业技术学院',
-    position: '党支书',
-    college: '计算机学院',
-    workAddress: '杭州',
-  },
-  preJobs: [{
-    id: 1,
-    time: '2020.01-2020.05',
-    company: '浙江杭州天猫有限公司',
-    bu: '基础服务事业部',
-    position: '产品',
-    address: '中国/浙江',
-    description: 'Fusion 是一套企业级中后台设计系统解决方案，致力于解决产品体验一致性问题、设计研发协同问题，以及UI开发效率问题。',
-  },
-  {
-    id: 2,
-    time: '2019.10-2020.12',
-    company: '蚂蚁金服',
-    bu: '企业服务事业部',
-    position: '产品',
-    address: '中国/浙江',
-    description: 'Antd 是一套企业级中后台设计系统解决方案，致力于解决产品体验一致性问题、设计研发协同问题，以及UI开发效率问题。',
-  },
-  ],
-  achievement: {
-    gPoint: 4.2,
-    scholarship: '省级优秀',
-    match: 'acm金牌',
-  },
-  dataLabelLine: [
-    { name: 'javascript', population: 41.8 },
-    { name: 'html', population: 38 },
-    { name: 'css', population: 33.7 },
-    { name: 'css3', population: 30.7 },
-    { name: 'html5', population: 25.8 },
-    { name: 'vue', population: 31.7 },
-    { name: 'react', population: 33 },
-    { name: 'angular', population: 46 },
-    { name: 'nodejs', population: 38.3 },
-    { name: 'less', population: 28 },
-    { name: 'threejs', population: 42.5 },
-    { name: 'd3js', population: 30.3 },
-  ],
-};
-
 
 const Detail = () => {
   const [loading, setLoading] = useState(false);
@@ -99,13 +34,33 @@ const Detail = () => {
 
   const getDetail = async () => {
     setLoading(true);
-    const res = await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(DEFAULT_DATA);
-      }, 500);
+    const id = Tools.getUrlParam('id');
+
+    const aj = await ajax({
+      url: `/data/detail.json?${Tools.obj2String({ id })}`, // 请求地址
+      method: 'GET', // 请求方式
     });
+    console.log('ajax', aj);
+
+    await fetch(`/data/detail.json?${Tools.obj2String({ id })}`,
+      {
+        method: 'GET',
+        headers: new Headers({
+          Accept: 'application/json', // 通过头指定，获取的数据类型是JSON
+        }),
+      }
+    ).then((response) => {
+      console.log('response', response);
+      return response.json();
+    }).then((re) => {
+      console.log('result', re);
+    });
+    const re = await request('/data/detail.json', { id });
+    console.log(re);
     setLoading(false);
-    setDataSource(res);
+    if (re.code === 200) {
+      setDataSource(re.data);
+    }
   };
 
   useEffect(() => {
