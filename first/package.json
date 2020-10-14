@@ -13,12 +13,6 @@
     "lint": "eslint . --ext '.js,.jsx' --fix",
     "prettier": "prettier src/**/*.scss --write"
   },
-  "lint-staged": {
-    "src/**/*.@(js|jsx)": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
   "readmeFilename": "README.md",
   "tnpm": {
     "mode": "npminstall"
