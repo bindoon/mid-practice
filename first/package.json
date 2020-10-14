@@ -19,11 +19,6 @@
       "git add"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run prettier && lint-staged"
-    }
-  },
   "readmeFilename": "README.md",
   "tnpm": {
     "mode": "npminstall"
