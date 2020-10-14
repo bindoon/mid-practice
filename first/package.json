@@ -1,6 +1,6 @@
 {
-  "name": "one",
-  "description": "1. web 前端 & 工程介绍",
+  "name": "first",
+  "description": "第一节课: web 前端简介",
   "version": "0.1.0",
   "keywords": [
     "next",
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@alifd/next": "^1.20.28",
-    "@alife/theme-blue": "^1.0.0",
+    "@alifd/theme-2": "^0.2.2",
     "babel-polyfill": "^6.8.0",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.0",
@@ -74,8 +74,5 @@
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.9",
     "webpack-simple-progress-plugin": "^0.0.4"
-  },
-  "buildConfig": {
-    "theme": "@alife/theme-blue"
   }
 }
