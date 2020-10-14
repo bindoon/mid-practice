@@ -14,20 +14,18 @@ module.exports = (env, argv) => {
       filename: '[name].js',
       chunkFilename: '[name].js',
     },
+    externals: {
+      'react': 'React',
+      'react-dom': 'ReactDOM',
+      'moment': 'moment',
+      '@alifd/next': 'Next'
+    },
     resolve: {
       extensions: ['.js', '.jsx'],
-      alias: {
-        components: path.join(__dirname, 'src/components'),
-        utils: path.join(__dirname, 'src/utils'),
-        styles: path.join(__dirname, 'src/styles'),
-        pages: path.join(__dirname, 'src/pages'),
-      },
-    },
-    externals: {
-      react: 'React',
-      'react-dom': 'ReactDOM',
-      moment: 'moment',
-      '@alifd/next': 'Next'
+      // alias: {
+      //   components: path.join(__dirname, 'src/components'),
+      //   utils: path.join(__dirname, 'src/utils'),
+      // },
     },
     module: {
       rules: [
@@ -45,6 +43,7 @@ module.exports = (env, argv) => {
             'css-loader',
             // Compiles Sass to CSS
             'sass-loader',
+            // 主题
             {
               loader: '@alifd/next-theme-loader',
               options: {
@@ -59,6 +58,8 @@ module.exports = (env, argv) => {
 
   if (argv.mode === 'development') {
     config.devtool = 'source-map';
+
+    // 开发环境本地 web 服务
     config.devServer = {
       headers: {
         'Access-Control-Allow-Origin': '*',

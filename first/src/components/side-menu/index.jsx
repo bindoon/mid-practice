@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Nav, Icon } from '@alifd/next';
 import classnames from 'classnames';
-import Tools from 'utils/index';
+import Tools from '../../utils/index';
 import './index.scss';
 
 const { Item, SubNav } = Nav;
