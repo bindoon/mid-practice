@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Nav, Icon } from '../../../../third/src/components/side-menu/node_modules/@alifd/next';
+import { Nav, Icon } from '@alifd/next';
 import classnames from 'classnames';
 import Tools from '../../utils/index';
 import './index.scss';
