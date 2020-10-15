@@ -1,13 +1,10 @@
-'use strict';
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Nav, Icon } from '@alifd/next';
 import classnames from 'classnames';
-import Tools from '../../utils/index';
 import './index.scss';
 
-const { Item, SubNav } = Nav;
+const { Item } = Nav;
 
 const links = {
   index: '/demos/index.html',
@@ -41,7 +38,6 @@ class SideMenu extends React.Component {
       'left-menu': true,
       'left-menu-folden': folden,
     });
-    const selectedOpenKey = sessionStorage.getItem('selectOpenKey');
     return (
       <div className={className}>
         <div className="fold-btn" onClick={this.foldClick}>
