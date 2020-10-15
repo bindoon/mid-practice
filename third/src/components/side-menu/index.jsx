@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Nav, Icon } from '@alifd/next';
 import classnames from 'classnames';
-import Link from '../link';
+import { Link } from 'react-router-dom';
 import './index.scss';
 
 const { Item } = Nav;
