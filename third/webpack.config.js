@@ -4,9 +4,7 @@ const path = require('path');
 module.exports = (env, argv) => {
   const config = {
     entry: {
-      'pages/help/index':  './src/pages/help/index.jsx',
-      'pages/index/index':  './src/pages/index/index.jsx',
-      'pages/simple/index':  './src/pages/simple/index.jsx',
+      'pages/index/index': './src/pages/index/index.jsx',
     },
     output: {
       path: path.resolve('build'),
@@ -15,10 +13,10 @@ module.exports = (env, argv) => {
       chunkFilename: '[name].js',
     },
     externals: {
-      'react': 'React',
+      react: 'React',
       'react-dom': 'ReactDOM',
-      'moment': 'moment',
-      '@alifd/next': 'Next'
+      moment: 'moment',
+      '@alifd/next': 'Next',
     },
     resolve: {
       extensions: ['.js', '.jsx'],
@@ -33,7 +31,7 @@ module.exports = (env, argv) => {
         {
           test: /\.jsx?$/,
           exclude: /node_modules/,
-          use: 'babel-loader'
+          use: 'babel-loader',
         },
         {
           test: /\.s[ac]ss$/i,
@@ -51,12 +49,12 @@ module.exports = (env, argv) => {
                 theme: '@alifd/theme-2',
                 // TODO
               },
-            }
+            },
           ],
         },
       ],
-    }
-  }
+    },
+  };
 
   if (argv.mode === 'development') {
     config.devtool = 'source-map';
@@ -77,7 +75,7 @@ module.exports = (env, argv) => {
   }
 
   if (argv.mode === 'production') {
-    //...
+    // ...
   }
 
   // TODO 演示更快捷的方式

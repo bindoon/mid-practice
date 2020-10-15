@@ -1,10 +1,8 @@
-'use strict';
-
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import Header from '../header/index';
 import SideMenu from '../side-menu/index';
-import classnames from 'classnames';
 import './index.scss';
 
 class Layout extends React.Component {

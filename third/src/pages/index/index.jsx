@@ -1,14 +1,16 @@
-'use strict';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Layout from '../../components/layout/index';
-import Mods from './mod/index';
+import Route from '../../components/router';
+import Home from './mod/index';
+import Simple from '../simple';
+import Help from '../help';
 import './index.scss';
 
 ReactDOM.render(
-  <Layout>
-    <Mods />
-  </Layout>,
+  <div>
+    <Route path="/" exact component={Home} />
+    <Route path="/simple" component={Simple} />
+    <Route path="/help" component={Help} />
+  </div>,
   document.getElementById('container'),
 );

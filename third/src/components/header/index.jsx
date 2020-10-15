@@ -1,7 +1,5 @@
-'use strict';
-
 import React from 'react';
-import { Dropdown, Menu, Icon } from '@alifd/next';
+import { Menu, Icon } from '@alifd/next';
 import './index.scss';
 
 

@@ -1,19 +1,11 @@
-'use strict';
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Nav, Icon } from '@alifd/next';
 import classnames from 'classnames';
-import Tools from '../../utils/index';
+import Link from '../link';
 import './index.scss';
 
-const { Item, SubNav } = Nav;
-
-const links = {
-  index: '/demos/index.html',
-  simple: '/demos/simple.html',
-  help: '/demos/help.html',
-};
+const { Item } = Nav;
 
 class SideMenu extends React.Component {
   static propTypes = {
@@ -26,9 +18,13 @@ class SideMenu extends React.Component {
     this.foldClick = this.foldClick.bind(this);
   }
 
-  handleClick(selectedKeys, item, extra) {
-    // 当多页面之间进行切换时，页面会刷新，所以只能通过sessionStorage来保存变量用于记录点击的是哪个链接传递到下一次页面生命周期中
-    sessionStorage.setItem('selectOpenKey', extra.keyPath.slice(0).toString());
+  getDefaultSelectedKeys() {
+    const url = window.location.hash.replace(/^#/, '');
+    const path =
+      (url.indexOf('?') === -1
+        ? url.substring(0)
+        : url.substring(0, url.indexOf('?'))) || '/';
+    return path;
   }
 
   foldClick() {
@@ -41,39 +37,30 @@ class SideMenu extends React.Component {
       'left-menu': true,
       'left-menu-folden': folden,
     });
-    const selectedOpenKey = sessionStorage.getItem('selectOpenKey');
     return (
       <div className={className}>
         <div className="fold-btn" onClick={this.foldClick}>
-          {
-            folden ? <Icon type="arrow-double-right" size="xs" /> : <Icon type="arrow-double-left" size="xs" />
-          }
+          {folden ? (
+            <Icon type="arrow-double-right" size="xs" />
+          ) : (
+            <Icon type="arrow-double-left" size="xs" />
+          )}
         </div>
         <Nav
           type="primary"
-          onSelect={this.handleClick.bind(this)}
           direction="ver"
           iconOnly={!!folden}
           className="left-nav"
-          defaultSelectedKeys={window.selectedMenuKey}
+          defaultSelectedKeys={this.getDefaultSelectedKeys()}
         >
-          <Item
-            key="index"
-            className="left-nav-item"
-            icon="atm"
-          ><a href={links.index}>首页</a>
+          <Item key="/" className="left-nav-item" icon="atm">
+            <Link path="/">首页</Link>
           </Item>
-          <Item
-            key="simple"
-            className="left-nav-item"
-            icon="atm"
-          ><a href={links.simple}>simple</a>
+          <Item key="/simple" className="left-nav-item" icon="atm">
+            <Link path="/simple">simple</Link>
           </Item>
-          <Item
-            key="redux"
-            className="left-nav-item"
-            icon="attachment"
-          ><a href={links.help}>help</a>
+          <Item key="/help" className="left-nav-item" icon="attachment">
+            <Link path="/help">help</Link>
           </Item>
         </Nav>
       </div>
