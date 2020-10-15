@@ -54,13 +54,13 @@ class SideMenu extends React.Component {
           defaultSelectedKeys={this.getDefaultSelectedKeys()}
         >
           <Item key="/" className="left-nav-item" icon="atm">
-            <Link path="/">首页</Link>
+            <Link to="/">首页</Link>
           </Item>
           <Item key="/simple" className="left-nav-item" icon="atm">
-            <Link path="/simple">simple</Link>
+            <Link to="/simple">simple</Link>
           </Item>
           <Item key="/help" className="left-nav-item" icon="attachment">
-            <Link path="/help">help</Link>
+            <Link to="/help">help</Link>
           </Item>
         </Nav>
       </div>

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 export default class Link extends React.Component {
   static propTypes = {
-    path: PropTypes.string.isRequired,
+    to: PropTypes.string.isRequired,
   };
 
   handleClick = (e) => {
     e.preventDefault();
-    window.location.hash = this.props.path;
+    window.location.hash = this.props.to;
   };
 
   render() {
