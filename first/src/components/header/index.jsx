@@ -30,19 +30,13 @@ class Header extends React.Component {
       <div className="header-component">
         <div className="sitenav">
           <div className="header-left header-icon header-item">
-            <a href="//fusion-demo.alibaba-inc.com/" target="_blank" rel="noopener noreferrer"><img src="//g.alicdn.com/next/next-factory-static/1.0.2/asset/img/home/white-logo.svg" width="100%" height="100%" /></a>
+            <a href="//fusion.design/" target="_blank" rel="noopener noreferrer"><img src="//g.alicdn.com/next/next-factory-static/1.0.2/asset/img/home/white-logo.svg" width="100%" height="100%" /></a>
           </div>
           <div className="header-left header-info header-item">
-            <a href="//next.alibaba-inc.com/" target="_blank" rel="noopener noreferrer">平台 title</a>
+            <a href="//fusion.design/" target="_blank" rel="noopener noreferrer">平台 title</a>
           </div>
-          <div className="header-left header-select header-item">
-            <Dropdown trigger={this.renderTrigger()} triggerType="click">
-              {this.renderMenu()}
-            </Dropdown>
-          </div>
-
           <div className="header-right header-user header-item">
-            <a href="//work.alibaba-inc.com/" target="_blank" rel="noopener noreferrer" title="用户头像"><img src="////cdog01.alibaba-inc.com/aliwork/tfscom/T1fxt7FtJlXXXXXXXX" width="100%" height="100%" /></a>
+            <a href="//fusion.design/" target="_blank" rel="noopener noreferrer" title="用户头像"><img src="////cdog01.alibaba-inc.com/aliwork/tfscom/T1fxt7FtJlXXXXXXXX" width="100%" height="100%" /></a>
           </div>
           <div className="header-right header-info header-item">
             <a href="//www.taobao.com" target="_blank" rel="noopener noreferrer">外链1</a>
