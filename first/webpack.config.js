@@ -1,7 +1,7 @@
 const path = require('path');
+// const globby = require('globby');
 
 module.exports = (env, argv) => {
-
   const config = {
     entry: {
       'pages/help/index':  './src/pages/help/index.jsx',
@@ -22,6 +22,7 @@ module.exports = (env, argv) => {
     },
     resolve: {
       extensions: ['.js', '.jsx'],
+      // TODO 演示 路径 alias
       // alias: {
       //   components: path.join(__dirname, 'src/components'),
       //   utils: path.join(__dirname, 'src/utils'),
@@ -77,6 +78,15 @@ module.exports = (env, argv) => {
   if (argv.mode === 'production') {
     //...
   }
+
+  // 演示更快捷的方式
+  // const entry = {};
+  // const cwd = process.cwd();
+  // const files = globby.sync(['**/pages/*'], { cwd: `${cwd}/src` });
+  // files.forEach((item) => {
+  //   entry[`${item}/index`] = [`./src/${item}/index.jsx`];
+  // });
+  // config.entry = entry
 
   return config;
 };
