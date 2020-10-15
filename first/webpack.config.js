@@ -79,7 +79,7 @@ module.exports = (env, argv) => {
     //...
   }
 
-  // 演示更快捷的方式
+  // TODO 演示更快捷的方式
   // const entry = {};
   // const cwd = process.cwd();
   // const files = globby.sync(['**/pages/*'], { cwd: `${cwd}/src` });
