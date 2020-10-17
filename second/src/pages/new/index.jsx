@@ -12,7 +12,6 @@ import {
   Box,
   Typography,
   Select,
-  Upload,
   Message,
   DatePicker,
 } from '@alifd/next';
@@ -39,7 +38,7 @@ const StepForm = () => {
     <Step.Item aria-current={index === currentStep ? 'step' : null} key={item} title={item} />,
   );
 
-  const submit = () => {
+  const toLastStep = () => {
     const values = projectField.getValues();
     console.log('values:', values);
     setStep(currentStep + 1);
@@ -63,19 +62,6 @@ const StepForm = () => {
     setStep(0);
   };
 
-  const handleBeforeUpload = (file, option) => {
-    console.log(file);
-    console.log(option);
-    const { size, type } = file;
-    if (size / 1024 < 100) {
-      Message.notice('文件必须大于100k');
-    }
-    if (type.indexOf('presentationml') > -1) {
-      Message.error('请注意文件格式');
-    }
-    return false;
-  };
-
   const handleValidator = (item, val) => {
     console.log(item);
     console.log(val);
@@ -96,11 +82,7 @@ const StepForm = () => {
     case 1:
       actions = (<React.Fragment>
         <Button onClick={goPrev} style={{ marginRight: '5px' }}>上一步</Button>
-        <Form.Submit
-          type="primary"
-          onClick={submit}
-          validate
-        >下一步</Form.Submit>
+        <Button onClick={toLastStep}>下一步</Button>
       </React.Fragment>);
       break;
     case 2:
@@ -176,12 +158,6 @@ const StepForm = () => {
             <Radio id="internal" value="internal">内部项目</Radio>
             <Radio id="publish" value="publish">开放目</Radio>
           </Radio.Group>
-        </Form.Item>
-
-        <Form.Item colSpan={12} help="请选择大小不超过5M的文件，支持doc，docx，xls，xlsx，zip格式">
-          <Upload name="file" action="https://www.easy-mock.com/mock/5b713974309d0d7d107a74a3/alifd/upload" beforeUpload={handleBeforeUpload}>
-            <Button type="normal" style={{ margin: '0 0 10px' }}>上传项目申请文件</Button>
-          </Upload>
         </Form.Item>
 
         <Form.Item colSpan={12} label="项目描述" >

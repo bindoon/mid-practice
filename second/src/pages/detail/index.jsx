@@ -15,6 +15,7 @@ import {
   Axis,
   Coordinate,
 } from 'bizcharts';
+import qs from 'qs';
 import Wouldcloud from './wordcloud';
 import Tools from '../../utils';
 import request from '../../api/request';
@@ -37,12 +38,12 @@ const Detail = () => {
     const id = Tools.getUrlParam('id');
 
     const aj = await ajax({
-      url: `/data/detail.json?${Tools.obj2String({ id })}`, // 请求地址
+      url: `/data/detail.json?${qs.stringify({ id })}`, // 请求地址
       method: 'GET', // 请求方式
     });
     console.log('ajax', aj);
 
-    await fetch(`/data/detail.json?${Tools.obj2String({ id })}`,
+    await fetch(`/data/detail.json?${qs.stringify({ id })}`,
       {
         method: 'GET',
         headers: new Headers({

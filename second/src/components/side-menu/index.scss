@@ -8,22 +8,21 @@ $top: 50px;
   z-index: 100;
   height: 100%;
   background-color: #333;
-  transition: width 0.5s;
-  .next-menu.next-nav-primary.next-ver .next-menu-item .next-menu-item-inner {
-    font-size: 14px;
+  .next-menu.next-nav-primary.next-ver .next-menu-item .next-menu-item-inner{
+      font-size:14px;
   }
-  .left-nav {
+  .left-nav{
     border: none;
     color: white;
-    .left-nav-item {
+    .left-nav-item{
       color: white;
-      a {
+      a{
         display: inline-block;
         color: white;
       }
     }
   }
-  .fold-btn {
+  .fold-btn{
     width: 100%;
     height: 50px;
     color: white;
@@ -32,7 +31,7 @@ $top: 50px;
     text-align: center;
     cursor: pointer;
   }
-  &.left-menu-folden {
+  &.left-menu-folden{
     width: 60px;
   }
 }

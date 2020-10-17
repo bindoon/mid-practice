@@ -396,6 +396,7 @@ class List extends React.Component {
   renderBtnGroup = () => {
     const { batchOpr, tableType } = this.state;
     return (<Button.Group>
+      <Button warning onClick={() => { window.location.href = '/demos/dev.html'; }}>Go开发页面</Button>
       <Button onClick={() => { this.setState({ newVisible: true }); }}>
         新增一条(弹窗)
       </Button>

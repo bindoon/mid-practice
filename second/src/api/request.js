@@ -1,5 +1,4 @@
-
-import Tools from '../utils';
+import qs from 'qs';
 
 /**
  * 封装的fetch函数，传入url(必须)和一个参数对象(可选)，这是fetch的需求参数
@@ -14,7 +13,7 @@ export default function request(url, data, options = {}) {
     ...options,
   };
   if (_opt.method === 'GET') {
-    url += `?${Tools.obj2String(data)}`;
+    url += `?${qs.stringify(data)}`;
   } else {
     _opt.body = JSON.stringify(data);
   }

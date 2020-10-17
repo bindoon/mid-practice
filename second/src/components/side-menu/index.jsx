@@ -4,17 +4,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Nav, Icon } from '@alifd/next';
 import classnames from 'classnames';
-// import Tools from 'utils/index';
+import Tools from '../../utils/index';
 import './index.scss';
 
-const { Item } = Nav;
+const { Item, SubNav } = Nav;
 
 const links = {
   index: '/demos/index.html',
   simple: '/demos/simple.html',
   help: '/demos/help.html',
-  list: '/demos/list.html',
   detail: '/demos/detail.html',
+  dev: '/demos/dev.html',
+  new: '/demos/new.html',
+  list: '/demos/list.html',
 };
 
 class SideMenu extends React.Component {
@@ -28,7 +30,7 @@ class SideMenu extends React.Component {
     this.foldClick = this.foldClick.bind(this);
   }
 
-  handleClick = (selectedKeys, item, extra) => {
+  handleClick(selectedKeys, item, extra) {
     // 当多页面之间进行切换时，页面会刷新，所以只能通过sessionStorage来保存变量用于记录点击的是哪个链接传递到下一次页面生命周期中
     sessionStorage.setItem('selectOpenKey', extra.keyPath.slice(0).toString());
   }
@@ -43,7 +45,7 @@ class SideMenu extends React.Component {
       'left-menu': true,
       'left-menu-folden': folden,
     });
-    // const selectedOpenKey = sessionStorage.getItem('selectOpenKey');
+    const selectedOpenKey = sessionStorage.getItem('selectOpenKey');
     return (
       <div className={className}>
         <div className="fold-btn" onClick={this.foldClick}>
@@ -53,7 +55,7 @@ class SideMenu extends React.Component {
         </div>
         <Nav
           type="primary"
-          onSelect={this.handleClick}
+          onSelect={this.handleClick.bind(this)}
           direction="ver"
           iconOnly={!!folden}
           className="left-nav"

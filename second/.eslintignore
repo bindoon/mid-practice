@@ -5,6 +5,7 @@ lib/
 docs/
 gulpfile.js
 webpack.config.js
+src/pages/dev/*.js
 
 
 # ignore mix js or css

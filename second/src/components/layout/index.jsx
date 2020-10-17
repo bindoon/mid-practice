@@ -2,8 +2,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from 'components/header/index';
-import SideMenu from 'components/side-menu/index';
+import Header from '../header/index';
+import SideMenu from '../side-menu/index';
 import classnames from 'classnames';
 import './index.scss';
 

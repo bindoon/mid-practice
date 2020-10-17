@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import {Button} from '@alifd/next';
 
 class Index extends React.Component {
   render() {

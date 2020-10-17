@@ -12,12 +12,6 @@ const Tools = {
       return `${name}-${v}`;
     };
   },
-  obj2String(obj, arr = [], idx = 0) {
-    for (const item in obj) {
-      arr[idx + 1] = [item, obj[item]];
-    }
-    return new URLSearchParams(arr).toString();
-  },
 };
 
 export const nameSpace = Tools.namespace.bind(Tools);
