@@ -60,7 +60,7 @@ class SideMenu extends React.Component {
           ><a href={links.simple}>simple</a>
           </Item>
           <Item
-            key="redux"
+            key="help"
             className="left-nav-item"
             icon="attachment"
           ><a href={links.help}>help</a>
