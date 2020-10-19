@@ -1,4 +1,6 @@
 import React from 'react';
+import { Table, Space } from 'antd';
+import 'antd/dist/antd.css';
 import {
   SchemaForm,
   SchemaMarkupField as Field,
@@ -9,8 +11,6 @@ import {
 } from '@formily/antd'; // 或者 @formily/next
 import { Input } from '@formily/antd-components'; // 或者@formily/next-components
 import { service } from './service';
-import { Table, Button, Space } from 'antd';
-import 'antd/dist/antd.css';
 
 export const ListPage = () => {
   const { form, table } = useFormTableQuery(service, [], {
