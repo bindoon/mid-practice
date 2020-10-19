@@ -4,13 +4,20 @@
     overflow: hidden;
     .right-content {
       padding-left: 65px;
+      padding-top:10px;
+      padding-bottom: 10px;
       transition: padding-left .5s;
       width: 100%;
-      margin-top: 80px;
+      margin-top: 50px;
       //transition: padding 1s linear;
       &.right-content-full{
         padding-left: 185px;
       }
     }
   }
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
 }

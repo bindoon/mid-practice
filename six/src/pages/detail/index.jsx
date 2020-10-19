@@ -5,11 +5,11 @@ import ReactDOM from 'react-dom';
 import Layout from '../../components/layout/index';
 import './index.scss';
 
-const CreatePage = () => <div>Hello world</div>;
+const DetailPage = () => <div>Hello world</div>;
 
 ReactDOM.render(
   <Layout>
-    <CreatePage />
+    <DetailPage />
   </Layout>,
   document.getElementById('container'),
 );

@@ -23,6 +23,7 @@
     "react/prefer-stateless-function": "off",
     "react/forbid-prop-types": "off",
     "class-methods-use-this": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "react/prop-types":"off"
   }
 }

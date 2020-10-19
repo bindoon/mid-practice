@@ -13,7 +13,7 @@ export const service = ({ values, pagination, sorter = {}, filters = {} }) =>
     },
   })
     .then(res => res.json())
-    .then(({ results, info }) => ({
+    .then(({ results }) => ({
       dataSource: results,
       ...pagination,
       total: 200,

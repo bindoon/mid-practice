@@ -1,6 +1,5 @@
 import React from 'react';
-import { Table, Space } from 'antd';
-import 'antd/dist/antd.css';
+import { Table, Space, Card, Button } from 'antd';
 import {
   SchemaForm,
   SchemaMarkupField as Field,
@@ -13,11 +12,16 @@ import { Input } from '@formily/antd-components'; // 或者@formily/next-compone
 import { service } from './service';
 
 export const ListPage = () => {
-  const { form, table } = useFormTableQuery(service, [], {
-    pagination: {
-      pageSize: 10,
-    },
-  });
+  const { form, table } = useFormTableQuery(
+    service, // 请求函数
+    [], // 中间件
+    {
+      // 默认配置
+      pagination: {
+        pageSize: 10,
+      },
+    }
+  );
 
   const columns = [
     {
@@ -43,10 +47,10 @@ export const ListPage = () => {
     {
       title: 'Operation',
       dataIndex: 'operation',
-      render: () => (
+      render: (value, record) => (
         <Space size="middle">
-          <a href="./detail">详情</a>
-          <a href="./edit">编辑</a>
+          <a href={`./detail.html?id=${record.login.uuid}`}>详情</a>
+          <a href={`./edit.html?id=${record.login.uuid}`}>编辑</a>
         </Space>
       ),
     },
@@ -54,23 +58,29 @@ export const ListPage = () => {
 
   return (
     <div className="list-page">
-      <SchemaForm
-        {...form}
-        components={{ Input }}
-        style={{ marginBottom: 20 }}
-        inline
+      <Card style={{ marginBottom: 20 }}>
+        <SchemaForm {...form} components={{ Input }} inline>
+          <Field type="string" name="name" title="Name" x-component="Input" />
+          <FormButtonGroup>
+            <Submit>查询</Submit>
+            <Reset>重置</Reset>
+          </FormButtonGroup>
+        </SchemaForm>
+      </Card>
+      <Card
+        title="用户管理列表"
+        extra={
+          <Button type="primary" href="./create.html">
+            创建用户
+          </Button>
+        }
       >
-        <Field type="string" name="name" title="Name" x-component="Input" />
-        <FormButtonGroup>
-          <Submit>查询</Submit>
-          <Reset>重置</Reset>
-        </FormButtonGroup>
-      </SchemaForm>
-      <Table
-        {...table}
-        columns={columns}
-        rowKey={record => record.login.uuid}
-      />
+        <Table
+          {...table}
+          columns={columns}
+          rowKey={record => record.login.uuid}
+        />
+      </Card>
     </div>
   );
 };

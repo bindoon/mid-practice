@@ -1,21 +1,13 @@
 'use strict';
 
 import React from 'react';
-import PropTypes from 'prop-types';
+import 'antd/dist/antd.css';
+import classnames from 'classnames';
 import Header from '../header/index';
 import SideMenu from '../side-menu/index';
-import classnames from 'classnames';
 import './index.scss';
 
-class Layout extends React.Component {
-  static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.element,
-    ]),
-  }
-
+export class Layout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
