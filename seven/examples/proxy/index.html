@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+  <div id="proxyRoot"></div>
+</body>
+
+<!-- <script>
+  (() => {
+    const global = {
+      'app1': {
+        name: 'young 自羽',
+        age: 18
+      },
+      'app2': {
+        name: 'old 自羽',
+        age: 27
+      }
+    }
+    let currentGlobalKey = 'app1';
+
+    const proxyGlobal = new Proxy(global, {
+      get(target, key) {
+        // 这里只写主流程 暂不去做容错处理
+        return target[currentGlobalKey];
+      },
+      set(target, key, value) {
+        // 这里只写主流程 暂不去做容错处理
+        return target[currentGlobalKey][key] = value;
+      }
+    })
+
+    console.log('proxyGlobal =>', proxyGlobal)
+    console.log('proxyGlobal app1 =>', proxyGlobal.get)
+    console.log('---------- 10 秒后 currentGlobalKey 开始发生变化变为 app2 ----------')
+
+    setTimeout(() => {
+      currentGlobalKey = 'app2';
+
+      console.log('proxyGlobal app2 =>', proxyGlobal.get)
+      console.log('---------- 5 秒后 app2 中修改 old 自羽 的名字为 韩梅梅 ----------')
+
+      setTimeout(() => {
+        proxyGlobal.name = '韩梅梅';
+
+        console.log('proxyGlobal app2 =>', proxyGlobal.get)
+        console.log('查看目前的所有的代理的值 =>', proxyGlobal)
+      }, 5000)
+
+    }, 10000)
+  })()
+</script> -->
+
+</html>

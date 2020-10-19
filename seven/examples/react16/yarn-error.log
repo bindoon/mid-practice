@@ -1,0 +1,59 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/ziyu/ziyu/micro-demo/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/ziyu/ziyu/micro-demo/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.18.3
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: EINVAL: invalid argument, unlink '/Users/ziyu/ziyu/micro-demo/examples/react16/node_modules/merge-deep/node_modules/clone-deep'
+
+npm manifest: 
+  {
+    "name": "react16",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "antd": "^3.25.2",
+      "qiankun": "^2.1.0",
+      "react": "^16.12.0",
+      "react-dom": "^16.12.0",
+      "react-router-dom": "^5.1.2"
+    },
+    "scripts": {
+      "start": "rescripts start",
+      "build": "rescripts build",
+      "test": "rescripts test",
+      "eject": "rescripts eject"
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    },
+    "devDependencies": {
+      "@rescripts/cli": "^0.0.14",
+      "react-scripts": "^3.4.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
