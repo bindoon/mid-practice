@@ -23,11 +23,6 @@ class SideMenu extends React.Component {
     this.foldClick = this.foldClick.bind(this);
   }
 
-  handleClick(selectedKeys, item, extra) {
-    // 当多页面之间进行切换时，页面会刷新，所以只能通过sessionStorage来保存变量用于记录点击的是哪个链接传递到下一次页面生命周期中
-    sessionStorage.setItem('selectOpenKey', extra.keyPath.slice(0).toString());
-  }
-
   foldClick() {
     this.props.onMenuFolden(!this.props.folden);
   }
@@ -47,7 +42,6 @@ class SideMenu extends React.Component {
         </div>
         <Nav
           type="primary"
-          onSelect={this.handleClick.bind(this)}
           direction="ver"
           iconOnly={!!folden}
           className="left-nav"
