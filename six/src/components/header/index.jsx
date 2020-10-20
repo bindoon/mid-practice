@@ -35,18 +35,12 @@ class Header extends React.Component {
             </a>
           </div>
           <div className="header-left header-info header-item">
-            <a href="//fusion.design/" target="_blank" rel="noopener noreferrer">平台 title</a>
+            <a href="//fusion.design/" target="_blank" rel="noopener noreferrer">Formily CRUD</a>
           </div>
           <div className="header-right header-user header-item">
             <a href="//fusion.design/" target="_blank" rel="noopener noreferrer" title="用户头像">
               <img src="https://img.alicdn.com/tfs/TB1.ZBecq67gK0jSZFHXXa9jVXa-904-826.png" width="100%" height="100%" />
             </a>
-          </div>
-          <div className="header-right header-info header-item">
-            <a href="//www.taobao.com" target="_blank" rel="noopener noreferrer">外链1</a>
-          </div>
-          <div className="header-right header-info header-item">
-            <a href="/demos/help.html" target="_blank" rel="noopener noreferrer">help</a>
           </div>
         </div>
       </div>
