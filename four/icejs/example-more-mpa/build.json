@@ -1,0 +1,9 @@
+{
+  "mpa": {
+    "openPage": "Dashboard",
+    "template": {
+      "index.html": ["Dashboard", "Home"]
+    }
+  },
+  "plugins": []
+}

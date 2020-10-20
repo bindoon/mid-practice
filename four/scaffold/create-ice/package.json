@@ -1,0 +1,38 @@
+{
+  "name": "create-ice",
+  "version": "1.7.2",
+  "description": "npm init ice",
+  "author": "ice-admin@alibaba-inc.com",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "bin": {
+    "create-ice": "lib/index.js"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@iceworks/generate-project": "^1.0.0",
+    "chalk": "^4.0.0",
+    "commander": "^6.0.0",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^7.0.4"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alibaba/ice.git"
+  },
+  "gitHead": "07ac7bb07162aac8c90778dd1de4a2060f8df498"
+}
