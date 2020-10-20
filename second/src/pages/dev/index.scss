@@ -1,0 +1,33 @@
+.home-page {
+  .big-text {
+    padding: 100px;
+    text-align: center;
+    font-size: 45px;
+    font-weight: 700;
+    color: green;
+  }
+}
+.myapp-container {
+  padding: 20px;
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .table-dom {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .footer-container {
+    display: flex;
+    align-items: center;
+  }
+  .remove-line {
+    text-decoration: line-through;
+  }
+}
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+}
