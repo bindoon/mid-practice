@@ -31,7 +31,7 @@ class Header extends React.Component {
         <div className="sitenav">
           <div className="header-left header-icon header-item">
             <a href="//fusion.design/" target="_blank" rel="noopener noreferrer">
-              <img src="//g.alicdn.com/next/next-factory-static/1.0.2/asset/img/home/white-logo.svg" width="100%" height="100%" />
+              <img src="https://g.alicdn.com/next/next-factory-static/1.0.2/asset/img/home/white-logo.svg" width="100%" height="100%" />
             </a>
           </div>
           <div className="header-left header-info header-item">
