@@ -74,6 +74,8 @@ module.exports = (env, argv) => {
         chunkModules: false,
       },
     };
+
+    setTimeout(() => console.log(`\n--------------- open http://127.0.0.1:${argv.port}/demos/index.html ---------------\n`))
   }
 
   if (argv.mode === 'production') {
